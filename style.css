@@ -1,0 +1,157 @@
+/* ==========================================
+   CONFIGURAÇÕES GERAIS E PALETA DE CORES
+   ========================================== */
+:root {
+    --verde-principal: #102A43; /* Azul escuro fechado */
+    --verde-claro: #FF8200;     /* Laranja vibrante para os botões e destaques */
+    --terra: #243B53;           /* Azul intermediário para o rodapé */
+    --fundo: #F0F4F8;           /* Fundo acinzentado confortável */
+    --texto: #102A43;           /* Letras na cor do azul escuro */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fundo);
+    color: var(--texto);
+    scroll-behavior: smooth; /* Faz a página rolar suavemente ao clicar no menu */
+}
+
+/* ==========================================
+   MENU DE NAVEGAÇÃO (HEADER)
+   ========================================== */
+header {
+    background-color: var(--verde-principal);
+    padding: 1rem;
+    position: sticky; /* Faz o menu ficar preso no topo ao rolar a página */
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Interatividade: muda de cor ao passar o mouse */
+nav a:hover {
+    color: var(--verde-claro);
+}
+
+/* ==========================================
+   SEÇÕES DO SITE
+   ========================================== */
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Banner Principal */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80') center/cover;
+    color: white;
+    padding: 100px 20px;
+    border-radius: 0 0 20px 20px;
+}
+
+/* ==========================================
+   BOTÕES INTERATIVOS
+   ========================================== */
+.btn {
+    background-color: var(--verde-principal);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    margin: 10px;
+}
+
+/* Interatividade: o botão cresce levemente e escurece o verde ao passar o mouse */
+.btn:hover {
+    background-color: #1B5E20;
+    transform: scale(1.05); 
+}
+
+/* Interatividade: efeito de clique */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   CARDS / CARTÕES DE SOLUÇÕES
+   ========================================== */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 250px;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-bottom 0.2s ease;
+}
+
+/* Interatividade: o card sobe um pouquinho e ganha uma borda verde embaixo */
+.card:hover {
+    transform: translateY(-5px);
+    border-bottom: 4px solid var(--verde-principal);
+}
+
+/* ==========================================
+   PAINEL DINÂMICO (JAVASCRIPT)
+   ========================================== */
+#info-panel {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-left: 5px solid var(--verde-principal);
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: none; /* Começa escondido e o JS ativa */
+    text-align: left;
+    animation: fadeIn 0.5s ease; /* Efeito suave ao aparecer */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
+    background-color: var(--terra);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}

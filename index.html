@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroSustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌱 AgroVida</h1>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Cultivando um Futuro Sustentável</h2>
+        <p>Descubra como a tecnologia e a natureza trabalham juntas para proteger o nosso planeta.</p>
+        <button class="btn" onclick="scrollToSection('solucoes')">Explorar Soluções</button>
+    </section>
+
+    <section id="solucoes">
+        <h2>Nossas Práticas Sustentáveis</h2>
+        <p>Clique em um dos cards abaixo para entender como funciona:</p>
+        
+        <div class="cards-container">
+            <div class="card" onclick="mostrarDetalhes('irrigacao')">
+                <h3>💧 Irrigação Gota a Gota</h3>
+                <p>Clique para saber mais</p>
+            </div>
+            <div class="card" onclick="mostrarDetalhes('energia')">
+                <h3>☀️ Energia Solar</h3>
+                <p>Clique para saber mais</p>
+            </div>
+            <div class="card" onclick="mostrarDetalhes('solo')">
+                <h3>🪱 Rotação de Culturas</h3>
+                <p>Clique para saber mais</p>
+            </div>
+        </div>
+
+        <div id="info-panel">
+            <h3 id="panel-title">Título da Solução</h3>
+            <p id="panel-text">Texto explicativo aqui...</p>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2>Fale Conosco</h2>
+        <p>Quer saber mais ou apoiar o projeto?</p>
+        <button class="btn" onclick="enviarMensagem()">Enviar Mensagem por E-mail</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Projeto Agro Sustentável. Feito com HTML, CSS e JS.</p>
+    </footer>
+
+    <script>
+        // Função 1: Rolar a página suavemente até a seção desejada
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Função 2: Mudar o conteúdo do painel baseado no card clicado
+        function mostrarDetalhes(tipo) {
+            const painel = document.getElementById('info-panel');
+            const titulo = document.getElementById('panel-title');
+            const texto = document.getElementById('panel-text');
+
+            // Mostra o painel alterando o display de 'none' para 'block'
+            painel.style.display = 'block';
+
+            if (tipo === 'irrigacao') {
+                titulo.innerText = "💧 Irrigação Gota a Gota";
+                texto.innerText = "Reduz o desperdício de água em até 60%, aplicando a quantidade exata de água diretamente na raiz da planta através de tubulações inteligentes.";
+            } else if (tipo === 'energia') {
+                titulo.innerText = "☀️ Energia Solar no Campo";
+                texto.innerText = "Utilização de painéis fotovoltaicos para alimentar bombas de água e sistemas elétricos da fazenda, gerando energia limpa e reduzindo custos.";
+            } else if (tipo === 'solo') {
+                titulo.innerText = "🪱 Rotação de Culturas";
+                texto.innerText = "Alternar as espécies plantadas na mesma área ajuda a manter os nutrientes do solo naturalmente, diminuindo a necessidade de fertilizantes químicos.";
+            }
+
+            // Rola suavemente até o painel para o usuário ver a informação
+            painel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Função 3: Alerta simples interativo no botão de contato
+        function enviarMensagem() {
+            alert("🚀 Mensagem enviada com sucesso! Obrigado pelo interesse no nosso projeto agro sustentável.");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
